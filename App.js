@@ -2,7 +2,14 @@ import { StatusBar } from "expo-status-bar";
 import {StyleSheet, Text, View, Dimensions, TextInput, Pressable} from "react-native";
 import styles from "./styles";
 import Svg, {ClipPath, Ellipse, Image} from "react-native-svg";
-import Animated, {useSharedValue, useAnimatedStyle, interpolate, withTiming, withDelay} from "react-native-reanimated";
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    interpolate,
+    withTiming,
+    withDelay,
+    runOnJS
+} from "react-native-reanimated";
 import {useState} from "react";
 
 export default function App() {
@@ -43,14 +50,16 @@ export default function App() {
     const loginHandler = () => {
         imagePosition.value = 0;
         if(isRegistering) {
-            setIsRegistering(false);
+            // setIsRegistering(false);
+            runOnJS(setIsRegistering)(false);
         }
     }
 
     const registerHandler = () => {
         imagePosition.value = 0;
         if(!isRegistering) {
-            setIsRegistering(true);
+            // setIsRegistering(true);
+            runOnJS(setIsRegistering)(true);
         }
     }
 
