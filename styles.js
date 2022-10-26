@@ -56,7 +56,10 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   formInputContainer: {
-    marginBottom: 70
+    marginBottom: 70,
+    ...StyleSheet.absoluteFill,
+    zIndex: -1,
+    justifyContent: 'center',
   },
   closeButtonContainer: {
     height: 40,
