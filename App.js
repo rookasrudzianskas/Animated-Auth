@@ -70,7 +70,6 @@ export default function App() {
         }
     }
 
-
     return (
         <Animated.View style={styles.container}>
             <Animated.View style={[StyleSheet.absoluteFill, imageAnimatedStyle]}>
